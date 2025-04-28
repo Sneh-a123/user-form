@@ -1,0 +1,166 @@
+/* Background Animation */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+  
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .ball-animate{
+    animation: ball 5s ease infinite;
+    transition: all 0.3s ease;
+  }
+
+  @keyframes ball {
+    0% {
+      transform: translate(0, 0); /* Start at top-left corner */
+    }
+    25% {
+      transform: translate(30vw, 0); /* Move halfway horizontally */
+    }
+    50% {
+      transform: translate(10vw, -450px); /* Move up */
+    }
+    75% {
+      transform: translate(70vw, -450px); /* Move fully across horizontally and up */
+    }
+    100% {
+      transform: translate(100vw, 0); /* End at top-right corner */
+    }
+  }
+  
+
+  /* Form Container */
+  .form-container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    width: 350px;
+  }
+  
+  .form h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  /* Form Groups */
+  .form-group {
+    position: relative;
+    margin-bottom: 30px;
+  }
+  .form-group input::placeholder, .form-group textarea::placeholder{
+    color: white;
+    opacity: 0.7;
+  }
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px 10px 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    color: white;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  .form-group textarea {
+    resize: none;
+    height: 80px;
+  }
+  
+  /* Floating Label */
+  .form-group label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    pointer-events: none;
+    transition: 0.5s ease all;
+    color: white;
+    font-size: 16px;
+  }
+  button:hover {
+    background: linear-gradient(270deg, #00dbde, #fc00ff);
+    background-size: 400% 400%;
+    animation: moveGradient 8s ease infinite;
+  }
+  
+  @keyframes moveGradient {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
+  
+  
+  input:focus, textarea:focus {
+    transform: scale(1.07);
+    box-shadow: 0 4px 20px #23d5ab;
+    padding: 10px;
+  }
+  
+  .form-group input:focus ~ label,
+  .form-group input:valid ~ label,
+  .form-group textarea:focus ~ label,
+  .form-group textarea:valid ~ label {
+    top: -20px;
+    font-size: 12px;
+    color: #23d5ab;
+  }
+  
+  /* Glowing Input */
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-bottom: 2px solid #23d5ab;
+    box-shadow: 0 1px 10px #23d5ab;
+  }
+  
+  /* Submit Button */
+  button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #23a6d5;
+    color: white;
+    font-size: 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+   .thank-you-message {
+    width: 320px;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+
+  .thank-you-message {
+    display: none;
+    font-size: 24px;
+    color: #4CAF50;
+    animation: popUp 0.5s ease forwards;
+  }
+
+  @keyframes popUp {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
